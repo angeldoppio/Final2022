@@ -5,27 +5,22 @@
       <h2 class="text-red-500 text-center">Register to be Vaccinated</h2>
       <p class="text-center">คุณสามารถลงทะเบียนได้ <span class="text-red-500">2</span> ท่าน</p>
       <div class="mt-3">
-        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+         <label class="block text-gray-700 text-m font-bold" for="place">
+        กรุณาเลือกสถานที่ลงทะเบียนวัคซีน
+      </label>
+        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" placeholder="กรุณาเลือกศูนย์วัคซีน" v-model="vaccination_center">
           <option>กรุณาเลือกศูนย์วัคซีน</option>
           <option>ศูนย์ฉีดวัคซีนกลางบางซื่อ (Centralize Vaccination Center)</option>
-        </select>
+        </select> 
       </div>
     <div class="mt-4">
-      <label class="block text-gray-700 text-m font-bold" for="username">
+      <label class="block text-gray-700 text-m font-bold" for="place">
         กรุณาเลือก การลงทะเบียนวัคซีน
       </label>
-      <div class="flex items-start space-x-3 py-2">
-      <input type="checkbox" class="border-gray-300 rounded h-5 w-5" />
-        <div class="flex flex-col">
-        <h1 class="text-gray-700 font-medium leading-none">เข็ม3 สำหรับบุคคลทั่วไปและชาวต่างชาติ ที่เคยได้รับวัคซีนครบ 2เข็ม</h1>
-        </div>
-      </div>
-      <div class="flex items-start space-x-3">
-      <input type="checkbox" class="border-gray-300 rounded h-5 w-5" />
-        <div class="flex flex-col">
-        <h1 class="text-gray-700 font-medium leading-none">เข็ม4 สำหรับบุคคลทั่วไป และชาวต่างชาติ ที่เคยได้รับวัคซีน 3 เข็ม ครบ 120วัน (ทุกชนิดวัคซีน)</h1>
-        </div>
-      </div>
+      <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" v-model="choice_vaccine">
+          <option>เข็ม3 สำหรับบุคคลทั่วไปและชาวต่างชาติ ที่เคยได้รับวัคซีนครบ 2เข็ม</option>
+          <option>เข็ม4 สำหรับบุคคลทั่วไป และชาวต่างชาติ ที่เคยได้รับวัคซีน 3 เข็ม ครบ 120วัน (ทุกชนิดวัคซีน)</option>
+        </select>
     </div>
    
     <div class="mt-6 w-full">
@@ -36,7 +31,7 @@
       <label class="block text-gray-700 text-sm font-bold" for="Prename">
        Name Title <span class="text-red-500">*</span>
       </label>
-       <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+       <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" v-model="prename">
           <option>นาย</option>
           <option>นาง</option>
           <option>นางสาว</option>
@@ -52,7 +47,7 @@
       <label class="block text-gray-700 text-sm font-bold" for="Gender">
        Gender <span class="text-red-500">*</span>
       </label>
-      <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+      <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" v-model="gender">
           <option>หญิง</option>
           <option>ชาย</option>
         </select>
@@ -64,7 +59,7 @@
       <label class="block text-gray-700 text-sm font-bold" for="FirstName">
       First Name <span class="text-red-500">*</span>
       </label>
-      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300 leading-tight">
+      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300 leading-tight" v-model="firstname">
     </div>
     <div class="mt-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="LastName">
@@ -73,7 +68,7 @@
       <label class="block text-gray-700 text-sm font-bold" for="LastName">
       Last Name <span class="text-red-500">*</span>
       </label>
-      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight">
+      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight" v-model="lastname">
     </div>
 
      <div class="mt-4">
@@ -83,7 +78,7 @@
       <label class="block text-gray-700 text-sm font-bold" for="LastName">
       Date of Birth<span class="text-red-500">*</span>
       </label>
-      <input type="date" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight">
+      <input type="date" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight" v-model="dob">
     </div>
 
      <div class="mt-4">
@@ -93,7 +88,7 @@
       <label class="block text-gray-700 text-sm font-bold" for="LastName">
       Telephone Number<span class="text-red-500">*</span>
       </label>
-      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight">
+      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight" v-model="Phone">
     </div>
 
     <div class="mt-4">
@@ -103,7 +98,7 @@
       <label class="block text-gray-700 text-sm font-bold" for="LastName">
      ID NO.<span class="text-red-500">*</span>
       </label>
-      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight">
+      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight" v-model="idNum">
     </div>
 
     <div class="mt-4">
@@ -116,21 +111,21 @@
       <label class="block text-gray-700 text-sm font-bold" for="LastName">
      บ้านเลขที่<span class="text-red-500">*</span>
       </label>
-      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight">
+      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight" v-model="homeNo">
 
       <label class="block text-gray-700 text-sm font-bold" for="LastName">
       ตำบล<span class="text-red-500">*</span>
       </label>
-      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight">
+      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight" v-model="district">
 
       <label class="block text-gray-700 text-sm font-bold" for="LastName">
       เขต<span class="text-red-500">*</span>
       </label>
-      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight">
+      <input type="text" class="w-full px-4 py-2 border-2 border-gray-300  leading-tight" v-model="ket">
       <label class="block text-gray-700 text-sm font-bold" for="LastName">
       จังหวัด<span class="text-red-500">*</span>
       </label>
-      <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+      <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" v-model="province">
            <option value="" selected>-------------------------------------------- เลือกจังหวัด ------------------------------------</option>
             <option value="กรุงเทพมหานคร">กรุงเทพมหานคร</option>
             <option value="กระบี่">กระบี่ </option>
@@ -216,12 +211,12 @@
       <label class="block text-gray-700 text-sm font-bold" for="LastName">
       รหัสไปรษณีย์<span class="text-red-500">*</span>
       </label>
-      <input type="text" class="w-1/2 px-4 py-2 border-2 border-gray-100  leading-tight">
+      <input type="text" class="w-1/2 px-4 py-2 border-2 border-gray-100  leading-tight" v-model="code">
     </div>
 
 
     <div class="mt-6 flex items-center justify-between">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" @click="register()">
        ยืนยันข้อมูล/submit
       </button>
     </div>
@@ -240,10 +235,44 @@ export default {
   },
   data() {
     return {
-      loginuser: [],
-      allItems: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      firstname: "",
+      lastname: "",
+      code: "",
+      vaccination_center: "",
+      prename: "",
+      gender: "",
+      dob: "",
+      province: "",
+      district: "",
+      ket: "",
+      Phone: "",
+      idNum: "",
+      homeNo: "",
+      choice_vaccine:""
+
+      
     };
   },
+  methods: {
+    register() {
+      axios
+          .post("http://localhost:3000/vaccines", {
+            vaccination_center: 'text',
+            choice_vaccine: this.choice_vaccine,
+            title: this.prename,
+            first_name: this.firstname,
+            last_name: this.lastname,
+            dob: this.dob,
+            phone_number: this.Phone,
+            id_card: this.idNum,
+            address: this.homeNo,
+            province: this.province,
+            district: this.district,
+            subdistrict: this.ket,
+            code: this.code
+          })
+    }
+  }
 };
 </script>
 <style scoped>
