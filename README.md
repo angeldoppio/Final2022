@@ -1,6 +1,36 @@
 # Final วิชา Software Tools
 # นางสาวณัฐริณีย์ เสาวลักษณ์ รหัสนักศึกษา 62070159
 
+
+## วิธีดาวน์โหลดไฟล์
+```
+git clone https://github.com/angeldoppio/Final2022.git
+```
+## เปิด cmd ขึ้นมา
+```
+cd frontend
+npm i
+```
+
+```
+npm run dev
+```
+
+## เปิด cmd ขึ้นมาอีกอัน
+```
+cd backend
+npm i
+```
+
+```
+npm run dev
+```
+
+### เมื่อทำการกรอกข้อมูลในฟอร์มเสร็จแล้วข้อมูลจะไป post อยู่ใน
+
+```
+http://localhost:3001/vaccines
+```
 ## Feature: ระบบลงทะเบียนรับวัคซีน
 
 ![Getting Started](./frontend/src/assets/1.png)
@@ -28,12 +58,26 @@
 ```
 2. ออกแบบ Back-End ด้วย Node.js
 ```
+
+### ตัวอย่าง
+![Getting Started](./frontend/src/assets/5.png)
+
 ```
 3. ออกแบบ Database ด้วย MongoDB เลือกใช้เป็น share database เนื่องจากมันฟรีและใช้งานง่าย
 ```
 
+### ตัวอย่างข้อมูลเวลาเข้า Database
+![Getting Started](./frontend/src/assets/4.png)
+
 # เลือกใช้ Trello เป็น Project Management Tools เนื่องจากใช้งานง่ายและสะดวกสบาย
-### [Link to my Trello here!](https://trello.com/invite/b/ealUwc55/db350c61c68e33e556bc7cc5f638a710/feature-ระบบลงทะเบียนรับวัคซีน)
+### ตัวอย่าง
+
+## [Link to my Trello here!](https://trello.com/invite/b/ealUwc55/db350c61c68e33e556bc7cc5f638a710/feature-ระบบลงทะเบียนรับวัคซีน)
+![Getting Started](./frontend/src/assets/6.png)
 
 # มีการออกแบบ Acceptance Test ไว้ใน Google Sheet
-### [Link to my Acceptance Test here!](https://docs.google.com/spreadsheets/d/1mTHVkJEdpAAf9lOZjIoWqp19O_fAlb8oVNlgE5xVLhI/edit?usp=sharing)
+#### ออกแบบไว้ 2 Testcase เนื่องจากเวลาไม่เพียงพอ
+## [Link to my Acceptance Test here!](https://docs.google.com/spreadsheets/d/1mTHVkJEdpAAf9lOZjIoWqp19O_fAlb8oVNlgE5xVLhI/edit?usp=sharing)
+
+
+
