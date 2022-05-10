@@ -256,8 +256,8 @@ export default {
   methods: {
     register() {
       axios
-          .post("http://localhost:3000/vaccines", {
-            vaccination_center: 'text',
+          .post("http://localhost:3001/vaccines", {
+            vaccination_center: this.vaccination_center,
             choice_vaccine: this.choice_vaccine,
             title: this.prename,
             first_name: this.firstname,
