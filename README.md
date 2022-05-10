@@ -31,6 +31,23 @@ npm run dev
 ```
 http://localhost:3001/vaccines
 ```
+
+### Commit Message
+```
+<type>: <description>
+```
+
+## Description
+```
+- คำอธิบายเกี่ยวกับการ commit นั้น ๆ ที่อ่านแล้วสามารถเข้าใจว่า commit นั้นคืออะไร เกี่ยวกับอะไร
+- ใช้เป็นภาษาอังกฤษ
+- ความยาวไม่เกิน 75 ตัวอักษร
+```
+
+## ตัวอย่างการใช้งาน
+```
+add: new package.json file
+```
 ## Feature: ระบบลงทะเบียนรับวัคซีน
 
 ![Getting Started](./frontend/src/assets/1.png)
@@ -79,5 +96,11 @@ http://localhost:3001/vaccines
 #### ออกแบบไว้ 2 Testcase เนื่องจากเวลาไม่เพียงพอ
 ## [Link to my Acceptance Test here!](https://docs.google.com/spreadsheets/d/1mTHVkJEdpAAf9lOZjIoWqp19O_fAlb8oVNlgE5xVLhI/edit?usp=sharing)
 
+### DockerFile
+![Getting Started](./frontend/src/assets/7.png)
+![Getting Started](./frontend/src/assets/8.png)
 
-
+```
+Back-End เลือกใช้ node version 16.14-alpine Expose Port ไปที่ 3001
+Front-End เลือกใช้ node version 16.14-alpine Expose Port ไปที่ 8660
+```
